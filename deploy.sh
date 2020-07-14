@@ -1,5 +1,4 @@
-
-#!/bin/sh
+#!/bin/bash
 
 if [ "`git status -s`" ]
 then
@@ -16,11 +15,12 @@ rm -rf .git/worktrees/public/
 echo "Checking out gh-pages branch into public"
 git worktree add -B gh-pages public upstream/gh-pages
 
-echo "Removing existing files"
+echo "Removing existiggng files"
 rm -rf public/*
 
 echo "Generating site"
 hugo
+docker run --rm -it -v 
 
 echo "Updating gh-pages branch"
-cd public && git add --all && git commit -m "Publishing to gh-pages "
+cd public && git add --all && git commit -m 
