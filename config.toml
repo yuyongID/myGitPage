@@ -1,5 +1,5 @@
 baseURL = "https://yuyongid.github.io/myWiki/"
 languageCode = "en-us"
 title = "My First Hugo Site Page"
-theme = "ananke"
+theme = "book"
 publishDir = "docs"

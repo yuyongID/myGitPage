@@ -1,1 +1,2 @@
 publishDir: docs
+theme: book
