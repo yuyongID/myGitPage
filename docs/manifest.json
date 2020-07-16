@@ -1,6 +1,6 @@
 {
-  "name": "My First Hugo Site Page",
-  "short_name": "My First Hugo Site Page",
+  "name": "裕用 Wiki",
+  "short_name": "裕用 Wiki",
   "start_url": "/myWiki/",
   "scope": "/myWiki/",
   "display": "standalone",

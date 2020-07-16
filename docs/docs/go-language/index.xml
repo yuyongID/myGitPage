@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go 语言 on 裕用 Wiki</title>
+    <link>https://yuyongid.github.io/myWiki/docs/go-language/</link>
+    <description>Recent content in go 语言 on 裕用 Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://yuyongid.github.io/myWiki/docs/go-language/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://yuyongid.github.io/myWiki/docs/go-language/go-notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuyongid.github.io/myWiki/docs/go-language/go-notes/</guid>
+      <description>testpage #  this is notes</description>
+    </item>
+    
+  </channel>
+</rss>
