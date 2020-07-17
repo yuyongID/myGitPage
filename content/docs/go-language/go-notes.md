@@ -1,3 +1,10 @@
+---
+bookFlatSection: true
+title: "go 语言一些笔记"
+---
+
+
+
 # 一些笔记
 
 ```go
