@@ -1,3 +1,6 @@
-# testpage
-this is notes
+# 一些笔记
+
+```go
+1<<31  // 2的31次方
+```
 
