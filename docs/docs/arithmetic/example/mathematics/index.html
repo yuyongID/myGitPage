@@ -4,18 +4,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Docs" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://yuyongid.github.io/myWiki/docs/" />
+<meta name="description" content="数学 mathematics #   整数反转 ...  func reverse(x int) int { y := 0 for x != 0 { y = y*10 &#43; x%10 x = x/10 } if y &lt; -(1&lt;&lt;31) || y &gt; (1&lt;&lt;31)-1 { return 0 } return y }     ">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="数学 mathematics" />
+<meta property="og:description" content="数学 mathematics #   整数反转 ...  func reverse(x int) int { y := 0 for x != 0 { y = y*10 &#43; x%10 x = x/10 } if y &lt; -(1&lt;&lt;31) || y &gt; (1&lt;&lt;31)-1 { return 0 } return y }     " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuyongid.github.io/myWiki/docs/arithmetic/example/mathematics/" />
 
-<title>Docs | 裕用 Wiki</title>
+<title>数学 mathematics | 裕用 Wiki</title>
 <link rel="manifest" href="/myWiki/manifest.json">
 <link rel="icon" href="/myWiki/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/myWiki/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
 <script defer src="/myWiki/en.search.min.3079933b55137b02694373035422da4bff83c55be62c713760a1255d04158167.js" integrity="sha256-MHmTO1UTewJpQ3MDVCLaS/&#43;DxVvmLHE3YKElXQQVgWc="></script>
-<link rel="alternate" type="application/rss+xml" href="https://yuyongid.github.io/myWiki/docs/index.xml" title="裕用 Wiki" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -191,7 +190,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
           
   
-    <a href="/myWiki/docs/arithmetic/example/mathematics/" class="">数学 mathematics</a>
+    <a href="/myWiki/docs/arithmetic/example/mathematics/" class="active">数学 mathematics</a>
   
 
         </li>
@@ -275,7 +274,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/myWiki/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Docs</strong>
+  <strong>数学 mathematics</strong>
 
   <label for="toc-control">
     
@@ -288,7 +287,11 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#数学-mathematics">数学 mathematics</a></li>
+  </ul>
+</nav>
 
 
   </aside>
@@ -298,7 +301,36 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"></article>
+  <article class="markdown"><h2 id="数学-mathematics">
+  数学 mathematics
+  <a class="anchor" href="#%e6%95%b0%e5%ad%a6-mathematics">#</a>
+</h2>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>整数反转</span>
+      <span>...</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverse</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+    <span style="color:#a6e22e">y</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
+        <span style="color:#a6e22e">y</span> = <span style="color:#a6e22e">y</span><span style="color:#f92672">*</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>
+        <span style="color:#a6e22e">x</span> = <span style="color:#a6e22e">x</span><span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>
+    }
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">y</span> &lt; <span style="color:#f92672">-</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">31</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">y</span> &gt; (<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">31</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> {
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">y</span>
+}
+</code></pre></div>
+    </div>
+  </label>
+</div>
+
+</article>
  
       
 
@@ -318,6 +350,10 @@ https://github.com/alex-shpak/hugo-book
 
       
   
+  <div class="book-comments">
+
+</div>
+  
  
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
@@ -326,7 +362,11 @@ https://github.com/alex-shpak/hugo-book
     
     <aside class="book-toc">
       
-  
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#数学-mathematics">数学 mathematics</a></li>
+  </ul>
+</nav>
 
  
     </aside>

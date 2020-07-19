@@ -7,10 +7,6 @@
   </url>
   
   <url>
-    <loc>https://yuyongid.github.io/myWiki/docs/go-language/go-notes/</loc>
-  </url>
-  
-  <url>
     <loc>https://yuyongid.github.io/myWiki/categories/</loc>
   </url>
   
@@ -27,11 +23,27 @@
   </url>
   
   <url>
+    <loc>https://yuyongid.github.io/myWiki/docs/go-language/go-notes/</loc>
+  </url>
+  
+  <url>
     <loc>https://yuyongid.github.io/myWiki/tags/</loc>
   </url>
   
   <url>
     <loc>https://yuyongid.github.io/myWiki/docs/arithmetic/example/bitoperation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://yuyongid.github.io/myWiki/docs/arithmetic/example/string/</loc>
+  </url>
+  
+  <url>
+    <loc>https://yuyongid.github.io/myWiki/docs/arithmetic/example/mathematics/</loc>
+  </url>
+  
+  <url>
+    <loc>https://yuyongid.github.io/myWiki/docs/arithmetic/example/array/</loc>
   </url>
   
   <url>
@@ -48,6 +60,10 @@
   
   <url>
     <loc>https://yuyongid.github.io/myWiki/docs/arithmetic/example/linkedlist/</loc>
+  </url>
+  
+  <url>
+    <loc>https://yuyongid.github.io/myWiki/docs/go-language/dev-rule/</loc>
   </url>
   
   <url>
