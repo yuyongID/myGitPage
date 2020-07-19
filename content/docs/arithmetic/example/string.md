@@ -5,7 +5,7 @@ title: "字符串 string"
 
 ## 字符串 string
 
-{{< expand "整数反转" "...">}}
+{{< expand "罗马数字转整数" "...">}}
 直接使用 hash map 作为索引会比较省事
 ```go
 func romanToInt(s string) int {
