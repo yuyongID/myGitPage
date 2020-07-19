@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>栗子🌰 on 裕用 Wiki</title>
+    <link>https://yuyongid.github.io/myWiki/docs/arithmetic/example/</link>
+    <description>Recent content in 栗子🌰 on 裕用 Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://yuyongid.github.io/myWiki/docs/arithmetic/example/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>位运算 bit operation</title>
+      <link>https://yuyongid.github.io/myWiki/docs/arithmetic/example/bitoperation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuyongid.github.io/myWiki/docs/arithmetic/example/bitoperation/</guid>
+      <description>位运算 bit operation #   IP 到 CIDR ...  #!/usr/bin/env python # -*- coding: utf-8 -*- def ipToCIDR(ip, range): &amp;#34;&amp;#34;&amp;#34; :type ip: str :type range: int :rtype: List[str] &amp;#34;&amp;#34;&amp;#34; ipInt = ipToInt(ip) ans = [] x = 0 while x &amp;lt; range: zeros = countZeros(ipInt + x) while x + (1&amp;lt;&amp;lt;zeros) &amp;gt; range: zeros -= 1 ans.append(intToIp(ipInt + x) + &amp;#34;/&amp;#34; + str(32 - zeros)) x += 1&amp;lt;&amp;lt;zeros return ans def ipToInt(ip): ans = 0 for idx, part in enumerate(ip.</description>
+    </item>
+    
+    <item>
+      <title>字符串 string</title>
+      <link>https://yuyongid.github.io/myWiki/docs/arithmetic/example/string/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuyongid.github.io/myWiki/docs/arithmetic/example/string/</guid>
+      <description>字符串 string #   整数反转 ...  直接使用 hash map 作为索引会比较省事
+func romanToInt(s string) int { tranMap := map[string]int { &amp;#34;I&amp;#34;: 1, &amp;#34;V&amp;#34;: 5, &amp;#34;X&amp;#34;: 10, &amp;#34;L&amp;#34;: 50, &amp;#34;C&amp;#34;: 100, &amp;#34;D&amp;#34;: 500, &amp;#34;M&amp;#34;: 1000, &amp;#34;IV&amp;#34;: 4, &amp;#34;IX&amp;#34;: 9, &amp;#34;XL&amp;#34;: 40, &amp;#34;XC&amp;#34;: 90, &amp;#34;CD&amp;#34;: 400, &amp;#34;CM&amp;#34;: 900, } sList := strings.Split(s, &amp;#34;&amp;#34;) result := 0 for i:=0;i&amp;lt;len(sList);i++ { if i == len(sList) -1 { result = result + tranMap[sList[i]] continue } if v, ok := tranMap[sList[i]+sList[i+1]];ok{ result = result + v i = i + 1 continue } result = result + tranMap[sList[i]] } return result }     </description>
+    </item>
+    
+    <item>
+      <title>数学 mathematics</title>
+      <link>https://yuyongid.github.io/myWiki/docs/arithmetic/example/mathematics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuyongid.github.io/myWiki/docs/arithmetic/example/mathematics/</guid>
+      <description>数学 mathematics #   整数反转 ...  func reverse(x int) int { y := 0 for x != 0 { y = y*10 + x%10 x = x/10 } if y &amp;lt; -(1&amp;lt;&amp;lt;31) || y &amp;gt; (1&amp;lt;&amp;lt;31)-1 { return 0 } return y }     </description>
+    </item>
+    
+    <item>
+      <title>数组 array</title>
+      <link>https://yuyongid.github.io/myWiki/docs/arithmetic/example/array/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuyongid.github.io/myWiki/docs/arithmetic/example/array/</guid>
+      <description>数组 array #   两数之和 ...  func twoSum(nums []int, target int) []int { result := map[int]int{} for i:=0;i&amp;lt;len(nums);i++{ if k, exist := result[target-nums[i]];exist { fmt.Println(k, i) return []int{k, i} } result[nums[i]] = i } return nil }      合并两个有序数组 ...   合并有序数列，不一定从小到大合并，也可以从大到小合并； 第一个数组有空间余量，直接操作比创建新变量空间合适；  func merge(nums1 []int, m int, nums2 []int, n int) { p1 := m-1 p2 := n-1 p3 := m+n-1 for ;p1&amp;gt;=0&amp;amp;&amp;amp;p2&amp;gt;=0;p3--{ if nums1[p1] &amp;lt; nums2[p2] { nums1[p3] = nums2[p2] p2 = p2-1 continue } nums1[p3] = nums1[p1] p1 = p1-1 } for i:=0;i&amp;lt;p2+1;i++{ nums1[i] = nums2[i] } }     </description>
+    </item>
+    
+    <item>
+      <title>链表 linked list</title>
+      <link>https://yuyongid.github.io/myWiki/docs/arithmetic/example/linkedlist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuyongid.github.io/myWiki/docs/arithmetic/example/linkedlist/</guid>
+      <description>链表 linked list #   合并两个有序列表 ...  /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode { result := &amp;amp;ListNode{} preHead := result for (l1 != nil &amp;amp;&amp;amp; l2 != nil){ if l1.Val &amp;lt; l2.Val { preHead.Next = l1 l1 = l1.Next } else { preHead.Next = l2 l2 = l2.Next } preHead = preHead.</description>
+    </item>
+    
+  </channel>
+</rss>
