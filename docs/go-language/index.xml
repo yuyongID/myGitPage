@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>go 语言 on 裕用 Wiki</title><link>https://yuyongid.github.io/myWiki/docs/go-language/</link><description>Recent content in go 语言 on 裕用 Wiki</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yuyongid.github.io/myWiki/docs/go-language/index.xml" rel="self" type="application/rss+xml"/><item><title>go 语言一些笔记</title><link>https://yuyongid.github.io/myWiki/docs/go-language/go-notes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuyongid.github.io/myWiki/docs/go-language/go-notes/</guid><description>一些笔记 # 1&amp;lt;&amp;lt;31 // 2的31次方</description></item><item><title>面向对象设计原则</title><link>https://yuyongid.github.io/myWiki/docs/go-language/dev-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuyongid.github.io/myWiki/docs/go-language/dev-rule/</guid><description>面向对象设计原则 # 依赖倒置原则（DIP）
+高层模块（稳定）不应该依赖底层模块（变化），二者都应该依赖抽象（稳定） 抽象（稳定）不应该依赖实现细节（变化），实现细节应该依赖于抽象（稳定） 开放封闭原则（OCP）
+对扩展开放，对更改封闭 类模块应该可以扩展的，但是不可以修改的 单一职责原则（LSP）
+一个类应该仅有一个引起他变化的原因 变化的方向隐含这类的责任 Liskov替换原则（LSP）
+子类必须能够替换他们的基类（IS-A） 继承表达类型抽象 接口隔离原则（ISP）
+不应该强迫客户程序依赖他们不使用的方法 接口应该小而完备 优先使用对象组合，而不是类继承
+类继承通常为“白箱复用”，对象组合通常为“黑箱复用” 继承在某种程度上破坏了封装性，子类父类耦合度高。 而对象组合则是要求被组合的对象有良好定义的接口，耦合度低。 封装变化点
+使用封装来创建对象之间的分界层。类设计者可以在分界的一侧进行修改，而不会对另外一侧产生不良的影响。从而实现层次间的松耦合。 针对接口编程，而不是针对实现编程
+不将变量的类型声明为某个特定的具体类，而声明为某接口； 客户程序无需获知对象的具体类型，只需要知道对象所具有的接口； 减少系统中各部分的依赖关系，从而实现“高内聚，低耦合”</description></item></channel></rss>
