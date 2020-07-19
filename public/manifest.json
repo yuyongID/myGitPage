@@ -1,0 +1,15 @@
+{
+  "name": "裕用 Wiki",
+  "short_name": "裕用 Wiki",
+  "start_url": "/myWiki/",
+  "scope": "/myWiki/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/myWiki/favicon.svg",
+      "sizes": "512x512"
+    }
+  ]
+}
