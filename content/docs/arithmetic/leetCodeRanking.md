@@ -26,6 +26,8 @@ title: "高频题目"
 #### 链表 linked list
 
 - [x] 合并两个有序链表
+- [x] 反转链表
+- [ ] 
 
 #### 二叉树 binary tree
 

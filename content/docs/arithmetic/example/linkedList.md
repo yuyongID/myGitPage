@@ -37,3 +37,26 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 ```
 {{< /expand>}}
 
+{{< expand "反转链表" "...">}}
+
+```go
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func reverseList(head *ListNode) *ListNode {
+    if nil == head {
+        return head
+    }
+    cur, next := head, head.Next
+    for ; nil != next; cur, next, next.Next = next, next.Next, cur {
+    }
+    head.Next = nil
+    return cur
+}
+```
+
+{{< /expand>}}
