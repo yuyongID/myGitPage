@@ -8,4 +8,4 @@ func romanToInt(s string) int { tranMap := map[string]int { &amp;#34;I&amp;#34;:
 类继承通常为“白箱复用”，对象组合通常为“黑箱复用” 继承在某种程度上破坏了封装性，子类父类耦合度高。 而对象组合则是要求被组合的对象有良好定义的接口，耦合度低。 封装变化点
 使用封装来创建对象之间的分界层。类设计者可以在分界的一侧进行修改，而不会对另外一侧产生不良的影响。从而实现层次间的松耦合。 针对接口编程，而不是针对实现编程
 不将变量的类型声明为某个特定的具体类，而声明为某接口； 客户程序无需获知对象的具体类型，只需要知道对象所具有的接口； 减少系统中各部分的依赖关系，从而实现“高内聚，低耦合”</description></item><item><title>高频题目</title><link>https://yuyongid.github.io/myWiki/docs/arithmetic/leetcoderanking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuyongid.github.io/myWiki/docs/arithmetic/leetcoderanking/</guid><description>LeetCode 的高频题目 # DFS：深度优先搜索算法（Depth First Search），对于二叉树而言，它沿着树的深度遍历树的节点，尽可能深的搜索树的分支，这一过程一直进行到已发现从源节点可达的所有节点为止。
-位运算 bit operation # IP 到 CIDR 只出现一次的数字 字符串 string # 罗马数字转整数 数学 mathematics # 整数反转 数组 arrary # 两数之和 合并两个有序数组 两数之和 II - 输入有序数组 链表 linked list # 合并两个有序链表 二叉树 binary tree # 反转二叉树 二叉树的最大深度 合并二叉树</description></item></channel></rss>
+位运算 bit operation # IP 到 CIDR 只出现一次的数字 字符串 string # 罗马数字转整数 数学 mathematics # 整数反转 数组 arrary # 两数之和 合并两个有序数组 两数之和 II - 输入有序数组 链表 linked list # 合并两个有序链表 反转链表 二叉树 binary tree # 反转二叉树 二叉树的最大深度 合并二叉树</description></item></channel></rss>
