@@ -124,3 +124,41 @@ func mergeTrees(t1 *TreeNode, t2 *TreeNode) *TreeNode {
 ```
 
 {{< /expand>}}
+
+{{< expand "二叉树层次遍历2" "...">}}
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func levelOrderBottom(root *TreeNode) [][]int {
+    if root == nil {
+        return nil
+    }
+    queue := []*TreeNode{root}
+    result := [][]int{}
+    for len(queue) > 0 {
+        levelVal := []int{}
+        size := len(queue)
+        for i:=0;i<size;i++ {
+            levelVal = append(levelVal, queue[i].Val)
+            if queue[i].Left != nil {
+                queue = append(queue, queue[i].Left)
+            }
+            if queue[i].Right != nil {
+                queue = append(queue, queue[i].Right)
+            }
+        }
+        queue = queue[size:]
+        result = append([][]int{levelVal}, result...)
+    }
+    return result
+}
+```
+
+{{< /expand>}}
