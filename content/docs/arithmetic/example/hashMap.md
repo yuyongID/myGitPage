@@ -73,3 +73,23 @@ func dfs(grid [][]int, r int, c int) int {
 ```
 
 {{< /expand>}}
+
+{{< expand "两个数组的交集" "...">}}
+
+```go
+func intersection(nums1 []int, nums2 []int) []int {
+    result := []int{}
+    setMap := make(map[int]bool)
+    for _, v := range nums1 {
+        setMap[v] = false
+    }
+    for _, v := range nums2 {
+        if sight, exist := setMap[v]; !sight && exist {
+            setMap[v] = true
+            result = append(result, v)
+        }
+    }
+    return result
+}
+```
+{{< /expand>}}
