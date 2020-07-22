@@ -24,3 +24,52 @@ func numJewelsInStones(J string, S string) int {
 ```
 
 {{< /expand>}}
+
+{{< expand "岛屿的周长" "...">}}
+
+```go
+// 强行遍历所有节点的四周，判断四周格子的类型来计算是否周长+1
+func islandPerimeter(grid [][]int) int {
+    perimeter := 0
+    for i:=0;i<len(grid);i++{
+        sum := 0
+        for j:=0;j<len(grid[0]);j++{
+            if grid[i][j] == 0{
+                continue
+            }
+            if j-1<0 || grid[i][j-1] == 0 {sum++}
+            if i-1<0 || grid[i-1][j] == 0 {sum++}
+            if j+1>=len(grid[0]) || grid[i][j+1] == 0 {sum++}
+            if i+1>=len(grid) || grid[i+1][j] == 0 {sum++}
+        }
+        perimeter = perimeter + sum
+    }
+    return perimeter
+}
+// DFS 递归遍历岛屿的格子，通过判断是否下一次进入的格子的类型和是否已经遍历过，来返回计入周长的边长是1还是0
+func islandPerimeter(grid [][]int) int {
+    for r:=0;r<len(grid);r++{
+        for c:=0;c<len(grid[0]);c++{
+            if grid[r][c] == 1 {
+                return dfs(grid, r, c)
+            }
+        }
+    }
+    return 0
+}
+func dfs(grid [][]int, r int, c int) int {
+    if !(0 <= r && r < len(grid) && 0 <= c && c < len(grid[0])) {
+        return 1
+    }
+    if grid[r][c] == 0 {
+        return 1
+    }
+    if grid[r][c] == 2 {
+        return 0
+    }
+    grid[r][c] = 2
+    return dfs(grid, r+1, c) + dfs(grid, r, c+1) + dfs(grid, r-1, c) + dfs(grid, r, c-1)
+}
+```
+
+{{< /expand>}}
