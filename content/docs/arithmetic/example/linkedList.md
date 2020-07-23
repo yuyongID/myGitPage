@@ -38,7 +38,6 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 {{< /expand>}}
 
 {{< expand "反转链表" "...">}}
-
 ```go
 /**
  * Definition for singly-linked list.
@@ -58,5 +57,19 @@ func reverseList(head *ListNode) *ListNode {
     return cur
 }
 ```
+{{< /expand>}}
 
+{{< expand "删除链表中的节点" "...">}}
+```go
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func deleteNode(node *ListNode) {
+    node.Val, node.Next= node.Next.Val, node.Next.Next
+}
+```
 {{< /expand>}}
