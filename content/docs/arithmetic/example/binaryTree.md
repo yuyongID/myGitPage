@@ -183,3 +183,58 @@ func sortedArrayToBST(nums []int) *TreeNode {
 ```
 
 {{< /expand>}}
+
+{{< expand "对称二叉树" "...">}}
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 递归遍历，传入双树，递归对比左树和右
+func isSymmetric(root *TreeNode) bool {
+    return checker(root, root)
+}
+func checker(left, right *TreeNode) bool {
+    if left == nil && right == nil {
+        return true
+    }
+    if left == nil || right == nil {
+        return false
+    }
+    return left.Val == right.Val &&
+        checker(left.Left, right.Right) &&
+        checker(left.Right, right.Left)
+}
+// 迭代遍历，用队列缓存取一双一双自左树和右树的镜像节点。然后从队列中取出一双来进行节点值对比。相等就把两个对比完的节点的镜像值一双一双存进队列。
+func isSymmetric(root *TreeNode) bool {
+    queue := []*TreeNode{
+        root,
+        root,
+    }
+    for len(queue) > 0 {
+        left, right := queue[0], queue[1]
+        queue = queue[2:]
+        if left == nil && right == nil {
+            continue
+        }
+        if left == nil || right == nil {
+            return false
+        }
+        if left.Val != right.Val {
+            return false
+        }
+        queue = append(queue, left.Left)
+        queue = append(queue, right.Right)
+        queue = append(queue, left.Right)
+        queue = append(queue, right.Left)
+    }
+    return true
+}
+```
+
+{{< /expand>}}

@@ -1,5 +1,5 @@
 ---
-bookFlatSection: true
+对称二叉树bookFlatSection: true
 title: "高频题目"
 ---
 # LeetCode 的高频题目
@@ -40,6 +40,7 @@ title: "高频题目"
 - [x] 合并二叉树
 - [x] 二叉树层次遍历2
 - [x] 将有序数组转化为高度平衡二叉搜索树
+- [x] 对称二叉树
 
 #### 哈希表 hash map
 - [x] 宝石与石头
