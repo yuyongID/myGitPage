@@ -1,5 +1,5 @@
 ---
-对称二叉树bookFlatSection: true
+最长公共前缀对称二叉树bookFlatSection: true
 title: "高频题目"
 ---
 # LeetCode 的高频题目
@@ -22,6 +22,7 @@ title: "高频题目"
 #### 字符串 string
 - [x] 罗马数字转整数
 - [x] 有效的括号
+- [x] 最长公共前缀（实现方法有待优化）
 
 #### 数学 mathematics
 - [x] 整数反转

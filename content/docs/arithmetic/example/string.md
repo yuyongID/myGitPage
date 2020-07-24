@@ -77,3 +77,35 @@ func isValid(s string) bool {
 ```
 
 {{< /expand>}}
+
+{{< expand "最长公共前缀" "...">}}
+
+```go
+func longestCommonPrefix(strs []string) string {
+    if len(strs) == 0 {
+        return ""
+    }
+    if len(strs) == 1 {
+        return strs[0]
+    }
+    mid := len(strs)/2
+    left := longestCommonPrefix(strs[:mid])
+    right := longestCommonPrefix(strs[mid:])
+    var length int
+    if len(left) < len(right) {
+        length = len(left)
+    } else {
+        length = len(right)
+    }
+    result := ""
+    for i:=0;i<length;i++ {
+        if left[i] != right[i] {
+            break
+        }
+        result = result + string(left[i])
+    }
+    return result
+}
+```
+
+{{< /expand>}}
