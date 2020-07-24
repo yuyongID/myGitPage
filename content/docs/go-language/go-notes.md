@@ -21,3 +21,8 @@ c := make(map[int]string)
 fmt.Println(c[0])  // "" 空字符串
 ```
 
+### string 字符串迭代
+
+- 使用 `for`+`i` 迭代字符串时，获取元素类型是 `byte`
+- 使用 `for` + `range` 迭代字符串时，获取元素类型是 `rune`
+
