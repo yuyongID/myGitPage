@@ -7,6 +7,7 @@ title: "字符串 string"
 
 {{< expand "罗马数字转整数" "...">}}
 直接使用 hash map 作为索引会比较省事
+
 ```go
 func romanToInt(s string) int {
     tranMap := map[string]int {
@@ -41,4 +42,38 @@ func romanToInt(s string) int {
     return result
 }
 ```
+{{< /expand>}}
+
+{{< expand "有效的括号" "...">}}
+
+```go
+func isValid(s string) bool {
+    parMap := map[rune]rune {
+        '(': '0',
+        '{': '0',
+        '[': '0',
+        ')': '(',
+        '}': '{',
+        ']': '[',
+    }
+    parQueue := []rune{}
+    for _, v := range s {
+        if _, ok := parMap[v]; !ok {
+            continue
+        }
+        if parMap[v] == '0' {
+            parQueue = append(parQueue, v)
+            continue
+        }
+        if len(parQueue) == 0 {return false}
+        if parMap[v] != parQueue[len(parQueue)-1] {
+            return false
+        }
+        parQueue = parQueue[:len(parQueue)-1]
+    }
+    if len(parQueue) > 0 {return false}
+    return true
+}
+```
+
 {{< /expand>}}
