@@ -56,11 +56,7 @@ if __name__ == '__main__':
 
 {{< expand "只出现一次的数字" "...">}}
 
-答案是使用位运算。对于这道题，可使用异或运算 ⊕。异或运算有以下三个性质。
-
-- 任何数和 0 做异或运算，结果仍然是原来的数，即 a⊕0=a。
-- 任何数和其自身做异或运算，结果是 0，即 a⊕a=0。
-- 异或运算满足交换律和结合律，即 a⊕b⊕a=b⊕a⊕a=b⊕(a⊕a)=b⊕0=b。
+答案是使用位运算。对于这道题，可使用异或运算 ⊕。
 
 ```go
 func singleNumber(nums []int) int {
@@ -74,3 +70,30 @@ func singleNumber(nums []int) int {
 
 {{< /expand>}}
 
+{{< expand "汉明距离" "...">}}
+```go
+// 通过位移计算异或结果的1的个数
+func hammingDistance(x int, y int) int {
+    distance := 0
+    xor := x^y
+    for xor>0 {
+        if xor&1 == 1 {
+            distance = distance + 1
+        }
+        xor = xor>>1
+    }
+    return distance
+}
+// 布赖恩·克尼根算法
+// 当我们在 number 和 number-1 上做 AND 位运算时，原数字 number 的最右边等于 1 的比特会被移除。
+func hammingDistance(x int, y int) int {
+    distance := 0
+    xor := x^y
+    for xor>0 {
+        distance = distance + 1
+        xor = xor & (xor-1)
+    }
+    return distance
+}
+```
+{{< /expand>}}
