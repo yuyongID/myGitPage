@@ -143,3 +143,32 @@ func max(x, y int) int {
 ```
 
 {{< /expand>}}
+
+{{< expand "罗马数字转整数" "...">}}
+```go
+// 对齐末尾字符，同时字符“相加”，通过 carry 的值传递进位。每位的结果位 carry+a[i]+b[i]，留下的结果位为 %2 的结果，下一次的进位为 /2 的结果。
+func addBinary(a string, b string) string {
+     result, carry, n := "", 0, 0
+     if len(a) > len(b) {
+         n = len(a)
+     } else {
+         n = len(b)
+     }
+     for i:=0; i<n; i++ {
+         if i < len(a) {
+             carry = carry + int(a[len(a)-1-i] - '0')  // 当字符串中 a[len(a)-1-i] 为 "0" 时，之际操作游标取出的是 uint8=48 类型是 byte，直接 int 转换就会得到一个 int=48；当[-''0']之后，相当是 utf8 编码的两个 48 相减，获得的是 uint8=0，int 转换之后就会得到一个 int 类型的 0。如果该位为 "1"，由于正好比"0"多1个编码位，所以得到的就是 uint8=1，int 转换即可得到 1。
+         }
+         if i < len(b) {
+             carry = carry + int(b[len(b)-1-i] - '0')
+         }
+         result = strconv.Itoa(carry%2) + result
+         // result = fmt.Sprintf("%b%s", carry%2, result)
+         carry = carry / 2
+     }
+     if carry > 0 {
+         result = "1" + result
+     }
+     return result
+}
+```
+{{< /expand>}}

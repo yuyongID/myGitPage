@@ -72,6 +72,10 @@ func singleNumber(nums []int) int {
 
 {{< expand "汉明距离" "...">}}
 ```go
+// 标准库方法
+func hammingDistance(x int, y int) int {
+    return bits.OnesCount(uint(x) ^ uint(y))
+}
 // 通过位移计算异或结果的1的个数
 func hammingDistance(x int, y int) int {
     distance := 0
