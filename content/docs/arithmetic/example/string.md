@@ -110,41 +110,6 @@ func longestCommonPrefix(strs []string) string {
 {{< /expand>}}
 
 {{< expand "二进制求和" "...">}}
-
-```go
-func addBinary(a string, b string) string {
-    ans := ""
-    carry := 0
-    lenA, lenB := len(a), len(b)
-    n := max(lenA, lenB)
-
-    for i := 0; i < n; i++ {
-        if i < lenA {
-            carry += int(a[lenA-i-1] - '0')
-        }
-        if i < lenB {
-            carry += int(b[lenB-i-1] - '0')
-        }
-        ans = strconv.Itoa(carry%2) + ans
-        carry /= 2
-    }
-    if carry > 0 {
-        ans = "1" + ans
-    }
-    return ans
-}
-
-func max(x, y int) int {
-    if x > y {
-        return x
-    }
-    return y
-}
-```
-
-{{< /expand>}}
-
-{{< expand "罗马数字转整数" "...">}}
 ```go
 // 对齐末尾字符，同时字符“相加”，通过 carry 的值传递进位。每位的结果位 carry+a[i]+b[i]，留下的结果位为 %2 的结果，下一次的进位为 /2 的结果。
 func addBinary(a string, b string) string {
@@ -171,4 +136,34 @@ func addBinary(a string, b string) string {
      return result
 }
 ```
+{{< /expand>}}
+
+{{< expand "字符串相加" "...">}}
+
+```go
+func addStrings(num1 string, num2 string) string {
+    carry, n := 0, 0
+    result := ""
+    if len(num1) > len(num2) {
+        n = len(num1)
+    } else {
+        n = len(num2)
+    }
+    for i:=0; i<n; i ++ {
+        if i < len(num1) {
+            carry = carry + int(num1[len(num1)-1-i] - '0')
+        }
+        if i < len(num2) {
+            carry = carry + int(num2[len(num2)-1-i] - '0')
+        }
+        result = strconv.Itoa(carry%10) + result
+        carry = carry / 10
+    }
+    if carry>0 {
+        result = strconv.Itoa(carry) + result
+    }
+    return result
+}
+```
+
 {{< /expand>}}
