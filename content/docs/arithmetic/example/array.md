@@ -69,3 +69,29 @@ func twoSum(numbers []int, target int) []int {
 
 {{< /expand>}}
 
+{{< expand "二维数组中的查找" "...">}}
+
+```
+func findNumberIn2DArray(matrix [][]int, target int) bool {
+    if len(matrix) == 0 || len(matrix[0]) == 0 {
+        return false
+    }
+    r, c := 0, len(matrix[0])-1
+    for r<len(matrix) && c>=0 {
+        if matrix[r][c] == target {
+            return true
+        }
+        if matrix[r][c] > target {
+            c = c - 1
+            continue
+        }
+        if matrix[r][c] < target {
+            r = r + 1
+            continue
+        }
+    }
+    return false
+}
+```
+
+{{< /expand>}}
