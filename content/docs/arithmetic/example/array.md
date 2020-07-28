@@ -95,3 +95,45 @@ func findNumberIn2DArray(matrix [][]int, target int) bool {
 ```
 
 {{< /expand>}}
+
+{{< expand "快速排序" "...">}}
+
+```go
+func sortArray(nums []int) []int {
+    if len(nums) < 2 {
+        return nums
+    }
+    lessList, greatList := []int{}, []int{}
+    for _, v := range nums[1:] {
+        if v < nums[0] {
+            lessList = append(lessList, v)
+            continue
+        }
+        greatList = append(greatList, v)
+    }
+    result := append([]int{}, sortArray(lessList)...)
+    result = append(result, nums[0])
+    result = append(result, sortArray(greatList)...)
+    return result
+}
+```
+
+```go
+// 冒泡排序
+func sortArray(nums []int) []int {
+    if len(nums) < 2 {
+        return nums
+    }
+    for i:=0; i<len(nums); i++ {
+        for j:=0; j<(len(nums)-i)-1; j++ {
+            if nums[j] > nums[j+1] {
+                nums[j], nums[j+1] = nums[j+1], nums[j]
+            }
+        }
+    }
+    return nums
+}
+```
+
+{{< /expand>}}
+
