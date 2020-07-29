@@ -238,3 +238,96 @@ func isSymmetric(root *TreeNode) bool {
 ```
 
 {{< /expand>}}
+
+{{< expand "二叉树深度" "...">}}
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func maxDepth(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+    if root.Left == nil && root.Right == nil {
+        return 1
+    }
+    leftDepth := maxDepth(root.Left)
+    rightDepth := maxDepth(root.Right)
+    if leftDepth > rightDepth {
+        return 1 + leftDepth
+    }
+    return 1 + rightDepth
+}
+```
+
+{{< /expand>}}
+
+{{< expand "二叉树中序遍历" "...">}}
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 递归方式
+func inorderTraversal(root *TreeNode) []int {
+    if root == nil {
+        return []int{}
+    }
+    if root.Left == nil && root.Right == nil {
+        return []int{root.Val}
+    }
+    leftList := inorderTraversal(root.Left)
+    rightList := inorderTraversal(root.Right)
+    result := append(leftList, root.Val)
+    result = append(result, rightList...)
+    return result
+}
+// 迭代方式
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func inorderTraversal(root *TreeNode) []int {
+    if root == nil {
+        return []int{}
+    }
+    if root.Left == nil && root.Right == nil {
+        return []int{root.Val}
+    }
+    result := []int{}
+    stack := []*TreeNode{root}
+    for len(stack) > 0 {
+        node := stack[len(stack)-1]
+        if node.Left != nil {
+            stack = append(stack, node.Left)
+            node.Left = nil
+            continue
+        }
+        stack = stack[:len(stack)-1]
+        result = append(result, node.Val)
+        if node.Right != nil {
+            stack = append(stack, node.Right)
+            node.Right = nil
+        }
+    }
+    return result
+}
+```
+
+{{< /expand>}}
+
