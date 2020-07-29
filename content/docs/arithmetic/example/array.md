@@ -137,3 +137,66 @@ func sortArray(nums []int) []int {
 
 {{< /expand>}}
 
+{{< expand "三数之和" "...">}}
+
+```go
+
+func threeSum(nums []int) [][]int {
+    n := len(nums)
+    sort.Ints(nums)
+    result := [][]int{}
+    for i:=0; i<n; i++ {
+        if i > 0 && nums[i] == nums[i-1] {  //固定位位游标去重
+            continue
+        }
+        right := n-1
+        for left:=i+1; left<n; left++ {  //迭代移动左游标，不停右移增加
+            if left>i+1 && nums[left] == nums[left-1]{  //大于初始值的左游标去重
+                continue
+            }
+            for left<right && nums[i]+nums[left]+nums[right]>0 {  //左右游标不能交叉
+                right = right - 1  //三值和大于0，右游标不停往左移，值越来越少
+            }
+            if left == right {break}  //游标相遇，直接退出迭代
+            if nums[i]+nums[left]+nums[right] == 0 {
+                result = append(result, []int{nums[i], nums[left], nums[right]})
+            }
+        }
+    }
+    return result
+}
+```
+
+{{< /expand>}}
+
+{{< expand "岛屿的最大面积" "...">}}
+
+```go
+func maxAreaOfIsland(grid [][]int) int {
+    result := 0
+    for r:=0; r<len(grid); r++ {
+        for c:=0; c<len(grid[0]); c++ {
+            if grid[r][c] == 1 {
+                value := helper(r, c, grid)
+                if result < value {
+                    result = value
+                }
+            }
+        }
+    }
+    return result    
+}
+
+func helper(r, c int, grid [][]int) int {
+    if r < 0 || r > len(grid) - 1 || c < 0 || c > len(grid[0]) - 1 {
+        return 0
+    }
+    if grid[r][c] == 0 || grid[r][c] == 2 {
+        return 0
+    }
+    grid[r][c] = 2
+    return 1 + helper(r+1, c, grid) + helper(r-1, c, grid) + helper(r, c+1, grid) + helper(r, c-1, grid)
+}
+```
+
+{{< /expand>}}
