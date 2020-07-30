@@ -225,7 +225,7 @@ func helper(r, c int, grid [][]int) int {
 
 {{< expand "最长连续递增序列" "...">}}
 
-```
+```go
 func findLengthOfLCIS(nums []int) int {
     if len(nums) <= 1 {
         return len(nums)
@@ -245,4 +245,50 @@ func findLengthOfLCIS(nums []int) int {
 }
 ```
 
+{{< /expand>}}
+{{< expand "数组中的第k个最大元素" "...">}}
+```go
+// 快速选择算法
+func findKthLargest(nums []int, k int) int {
+    rand.Seed(time.Now().UnixNano())
+    left, right := 0, len(nums)-1
+    target := len(nums) - k
+    cur := -1
+    for cur != target {
+        cur := partition(left, right, nums, target)
+        if cur < target {
+            left = cur + 1
+        } else if cur > target {
+            right = cur - 1
+        }
+    }
+    return nums[cur]
+}
+
+func partition(left, right int, nums []int, target int) int{
+    if left == right {
+        return left
+    }
+    i := rand.Int() % (right - left + 1) + left
+    n := nums[right]
+    nums[i], nums[right] = nums[right], nums[i]
+    l , r := left, right-1
+    for l < r {
+        for l < r && nums[l] <= n {
+            l = l + 1
+        }
+        for l < r && n < nums[r] {
+            r = r - 1
+        }
+        if l != r {
+            nums[l], nums[r] = nums[r], nums[l]
+        }
+    }
+    if nums[l] > n {
+        nums[l], nums[right] = nums[right], nums[l]
+        return l
+    }
+    return right
+}
+```
 {{< /expand>}}
