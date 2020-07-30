@@ -222,3 +222,27 @@ func helper(r, c int, grid [][]int) int {
 ```
 
 {{< /expand>}}
+
+{{< expand "最长连续递增序列" "...">}}
+
+```
+func findLengthOfLCIS(nums []int) int {
+    if len(nums) <= 1 {
+        return len(nums)
+    }
+    result, tmp := 1, 1
+    for i:=0; i<len(nums)-1; i++ {
+        if nums[i] < nums[i+1] {
+            tmp = tmp + 1
+        } else {
+            tmp = 1
+        }
+        if tmp > result {
+            result = tmp
+        }   
+    }
+    return result
+}
+```
+
+{{< /expand>}}
