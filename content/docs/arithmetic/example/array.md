@@ -255,7 +255,7 @@ func findKthLargest(nums []int, k int) int {
     target := len(nums) - k
     cur := -1
     for cur != target {
-        cur := partition(left, right, nums, target)
+        cur = partition(left, right, nums, target)
         if cur < target {
             left = cur + 1
         } else if cur > target {
