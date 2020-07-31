@@ -270,7 +270,7 @@ func partition(left, right int, nums []int, target int) int{
         return left
     }
     i := rand.Int() % (right - left + 1) + left
-    n := nums[right]
+    n := nums[i]
     nums[i], nums[right] = nums[right], nums[i]
     l , r := left, right-1
     for l < r {
