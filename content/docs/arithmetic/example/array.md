@@ -292,3 +292,35 @@ func partition(left, right int, nums []int, target int) int{
 }
 ```
 {{< /expand>}}
+
+{{< expand "全排列" "...">}}
+
+```go
+func permute(nums []int) [][]int {
+    result := [][]int{}
+    path := []int{}
+    used := make([]bool, len(nums))
+    backtrack(path, nums, used, &result)
+    return result
+}
+
+func backtrack(path, nums []int, used []bool, result *[][]int) {
+    if len(path) == len(nums) {
+        tmp := make([]int, len(path))
+        copy(tmp, path)
+        *result = append(*result, tmp)
+        return
+    }
+    for i:=0; i<len(nums); i++ {
+        if !used[i] {
+            used[i] = true
+            path = append(path, nums[i])
+            backtrack(path, nums, used, result)
+            path = path[:len(path)-1]
+            used[i] = false
+        }
+    }
+}
+```
+
+{{< /expand>}}
