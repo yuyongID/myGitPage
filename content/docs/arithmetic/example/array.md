@@ -324,3 +324,27 @@ func backtrack(path, nums []int, used []bool, result *[][]int) {
 ```
 
 {{< /expand>}}
+{{< expand "乘最多水的容器" "...">}}
+```go
+func maxArea(height []int) int {
+    result, i, j := 0, 0, len(height)-1
+    for i != j {
+        area := (j-i) * min(height[i], height[j])
+        if area > result {
+            result = area
+        }
+        if height[i] < height[j] {
+            i = i + 1
+            continue
+        }
+        j = j - 1
+    }
+    return result
+}
+
+func min(i, j int) int {
+    if i < j {return i}
+    return j
+}
+```
+{{< /expand>}}
