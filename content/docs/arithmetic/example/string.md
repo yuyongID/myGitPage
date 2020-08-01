@@ -167,3 +167,29 @@ func addStrings(num1 string, num2 string) string {
 ```
 
 {{< /expand>}}
+
+{{< expand "验证回文串" "...">}}
+```go
+func isPalindrome(s string) bool {
+    left, right := 0, len(s)-1
+    for left <= right {
+        for left < right && !isalnum(s[left]) {
+            left = left + 1
+        }
+        for left < right && !isalnum(s[right]) {
+            right = right - 1
+        }
+        if strings.ToLower(string(s[left])) != strings.ToLower(string(s[right])) {
+            fmt.Print(string(s[left]), string(s[right]))
+            return false
+        }
+        left, right = left+1, right-1
+    }
+    return true
+}
+
+func isalnum(ch byte) bool {
+    return (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9')
+}
+```
+{{< /expand>}}
