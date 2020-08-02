@@ -41,7 +41,7 @@ func merge(nums1 []int, m int, nums2 []int, n int)  {
     for i:=0;i<p2+1;i++{
         nums1[i] = nums2[i]
     }
-
+    return nums1
 }
 ```
 {{< /expand>}}
@@ -93,7 +93,7 @@ func search(nums []int, target int) int {
 {{< /expand>}}
 {{< expand "二维数组中的查找" "...">}}
 
-```
+```go
 func findNumberIn2DArray(matrix [][]int, target int) bool {
     if len(matrix) == 0 || len(matrix[0]) == 0 {
         return false
@@ -147,7 +147,7 @@ func sortArray(nums []int) []int {
         return nums
     }
     for i:=0; i<len(nums); i++ {
-        for j:=0; j<(len(nums)-i)-1; j++ {
+        for j:=0; j<len(nums)-i; j++ {
             if nums[j] > nums[j+1] {
                 nums[j], nums[j+1] = nums[j+1], nums[j]
             }

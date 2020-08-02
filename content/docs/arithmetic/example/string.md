@@ -180,7 +180,6 @@ func isPalindrome(s string) bool {
             right = right - 1
         }
         if strings.ToLower(string(s[left])) != strings.ToLower(string(s[right])) {
-            fmt.Print(string(s[left]), string(s[right]))
             return false
         }
         left, right = left+1, right-1
