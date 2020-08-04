@@ -192,3 +192,29 @@ func isalnum(ch byte) bool {
 }
 ```
 {{< /expand>}}
+{{< expand "最长回文串" "...">}}
+```go
+func longestPalindrome(s string) int {
+    sMap := map[byte]int{}
+    for i:=0; i<len(s); i++ {
+        if v, ok := sMap[s[i]]; ok {
+            sMap[s[i]] = v + 1
+        } else {
+            sMap[s[i]] = 1
+        }
+    }
+    result, less := 0, 0
+    for _, v := range sMap {
+        mod := v % 2
+        result = result + v - mod
+        less = less + mod
+    }
+    //fmt.Print(sMap, result, less)
+    if less >0 {
+        return result+1
+    }
+    return result
+
+}
+```
+{{< /expand>}}
