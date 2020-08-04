@@ -192,3 +192,28 @@ func isalnum(ch byte) bool {
 }
 ```
 {{< /expand>}}
+
+{{< expand "无重复字符的最长子串" "...">}}
+
+```go
+// 双游标配合 map[字母]index 组成的滑动窗口
+func lengthOfLongestSubstring(s string) int {
+    result, sMap := 0, map[byte]int{}
+    for left, right:=0, 0; right<len(s); right++ {
+        if v, ok := sMap[s[right]]; ok {
+            left = max(left, v) // 左指针只在最大的一方 "abba"
+        }
+        result = max(result, right-left+1)
+        sMap[s[right]] = right + 1 
+    }
+    return result
+}
+func max(a, b int) int {
+    if a > b {
+        return a
+    }
+    return b
+}
+```
+
+{{< /expand>}}
