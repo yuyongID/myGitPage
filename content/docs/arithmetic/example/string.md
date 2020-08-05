@@ -217,3 +217,28 @@ func max(a, b int) int {
 ```
 
 {{< /expand>}}
+
+{{< expand "括号生成" "...">}}
+
+```go
+func generateParenthesis(n int) []string {
+    result := new([]string)
+    backtrack("", n, n, result)
+    return *result
+}
+
+func backtrack(path string, left, right int, result *[]string) {
+    if left == 0 && right == 0 {
+        *result = append(*result, path)
+        return
+    }
+    if left > 0 {
+        backtrack(path+"(", left-1, right, result)
+    }
+    if right > left {
+        backtrack(path+")", left, right-1, result)
+    }
+}
+```
+
+{{< /expand>}}
