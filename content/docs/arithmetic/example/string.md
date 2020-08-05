@@ -192,7 +192,6 @@ func isalnum(ch byte) bool {
 }
 ```
 {{< /expand>}}
-<<<<<<< HEAD
 
 {{< expand "无重复字符的最长子串" "...">}}
 
@@ -242,7 +241,6 @@ func backtrack(path string, left, right int, result *[]string) {
 }
 ```
 
-=======
 {{< expand "最长回文串" "...">}}
 ```go
 func longestPalindrome(s string) int {
@@ -268,5 +266,4 @@ func longestPalindrome(s string) int {
 
 }
 ```
->>>>>>> 757652de1cbdc8b341cd700642256cc623fb3ce9
 {{< /expand>}}
