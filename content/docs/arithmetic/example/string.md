@@ -292,5 +292,36 @@ func convert(s string, numRows int) string {
     return resutl
 }
 ```
+{{< /expand>}}
+{{< expand "电话号码的字母组合" "...">}}
+```go
+func letterCombinations(digits string) []string {
+    if len(digits) <= 0 {return nil}
+    digitsMap := map[byte][]string{
+        '2': []string{"a", "b", "c"},
+        '3': []string{"d", "e", "f"},
+        '4': []string{"g", "h", "i"},
+        '5': []string{"j", "k", "l"},
+        '6': []string{"m", "n", "o"},
+        '7': []string{"p", "q", "r", "s"},
+        '8': []string{"t", "u", "v"},
+        '9': []string{"w", "x", "y", "z"},
+    }
+    path := ""
+    result := []string{}
+    backtrack(path, digits, &result, digitsMap)
+    return result
+}
 
+func backtrack(path, digits string, result *[]string, digitsMap map[byte][]string) {
+    if len(path) == len(digits) {
+        *result = append(*result, path)
+        return
+    }
+    i := len(path)
+    for _, v := range digitsMap[digits[i]] {
+        backtrack(path+v, digits, result, digitsMap)
+    }
+}
+```
 {{< /expand>}}
