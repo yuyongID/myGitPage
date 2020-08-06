@@ -241,7 +241,10 @@ func backtrack(path string, left, right int, result *[]string) {
 }
 ```
 
+{{< /expand>}}
+
 {{< expand "最长回文串" "...">}}
+
 ```go
 func longestPalindrome(s string) int {
     sMap := map[byte]int{}
@@ -266,4 +269,28 @@ func longestPalindrome(s string) int {
 
 }
 ```
+{{< /expand>}}
+
+{{< expand "Z 字形变换" "...">}}
+
+```go
+func convert(s string, numRows int) string {
+    if numRows <= 1 {return s}
+    listS := make([]string, numRows)
+    i, flag := 0, -1
+    for _, v := range s {
+        listS[i] = listS[i] + string(v)
+        if i == numRows-1 || i == 0 {
+            flag = -flag
+        }
+        i = i + flag
+    }
+    resutl := ""
+    for _, v := range listS {
+        resutl = resutl + v
+    }
+    return resutl
+}
+```
+
 {{< /expand>}}
