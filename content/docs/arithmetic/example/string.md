@@ -261,7 +261,6 @@ func longestPalindrome(s string) int {
         result = result + v - mod
         less = less + mod
     }
-    //fmt.Print(sMap, result, less)
     if less >0 {
         return result+1
     }

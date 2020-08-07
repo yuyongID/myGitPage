@@ -7,15 +7,14 @@ title: "数组 array"
 {{< expand "两数之和" "...">}}
 ```go
 func twoSum(nums []int, target int) []int {
-    result := map[int]int{}
-    for i:=0;i<len(nums);i++{
-	if k, exist := result[target-nums[i]];exist {
-	    fmt.Println(k, i)
-	    return []int{k, i}
-	}
-	result[nums[i]] = i
-    }
-    return nil
+  result := map[int]int{}
+  for i:=0;i<len(nums);i++{
+    if k, exist := result[target-nums[i]];exist {
+	    	return []int{k, i}
+		}
+    result[nums[i]] = i
+  }
+  return nil
 }
 ```
 {{< /expand>}}
@@ -165,7 +164,7 @@ func sortArray(nums []int) []int {
 
 func threeSum(nums []int) [][]int {
     n := len(nums)
-    sort.Ints(nums)
+    sort.Ints(nums)  // 先排序
     result := [][]int{}
     for i:=0; i<n; i++ {
         if i > 0 && nums[i] == nums[i-1] {  //固定位位游标去重

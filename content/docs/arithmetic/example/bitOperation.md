@@ -101,3 +101,33 @@ func hammingDistance(x int, y int) int {
 }
 ```
 {{< /expand>}}
+
+{{< expand "二进制手表" "...">}}
+
+```go
+// 暴力解法，直接遍历所有合法的时间组合，计算“1”的个数的和是否与输出 num 相等
+func readBinaryWatch(num int) []string {
+    ret := make([]string,0)
+    for i:=0;i<12;i++{
+        for j:=0;j<=59;j++{
+            if bitNums(i)+bitNums(j) == num {
+                ret  =append(ret,fmt.Sprintf("%d:%02d",i,j))
+            }
+        }
+    }
+    return ret
+}
+
+func bitNums(i int) int{
+    num :=0
+    for i>0{
+        if i%2==1{
+            num++
+        }
+        i=i>>1
+    }
+    return num
+}
+```
+
+{{< /expand>}}

@@ -55,6 +55,7 @@ func backtrack(路径，选择列表) {
 #### 位运算 bit operation
 - [ ] IP 到 CIDR
 - [x] 只出现一次的数字
+- [x] 二进制手表
 
 #### 字符串 string
 - [x] 罗马数字转整数
