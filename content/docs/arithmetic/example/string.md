@@ -324,3 +324,47 @@ func backtrack(path, digits string, result *[]string, digitsMap map[byte][]strin
 }
 ```
 {{< /expand>}}
+{{< expand "分割回文串" "...">}}
+```go
+func partition(s string) [][]string {
+    length := len(s)
+    result := [][]string{}
+    if length == 0 {
+        return result
+    }
+    pathList := []string{}
+    backtrack(pathList, s, 0, length, &result)
+    return result
+}
+
+func backtrack(pathList []string, s string, index int, length int, result *[][]string) {
+    if index >= length {
+        tmp := make([]string, len(pathList))
+        copy(tmp, pathList)
+        *result = append(*result, tmp)
+        return
+    }
+
+    for i:=index; i<length; i++ {
+        if !isPalindrome(s, index, i){
+            continue
+        }
+        pathList = append(pathList, s[index:i+1])
+        backtrack(pathList, s, i+1, length, result)
+        pathList = pathList[:len(pathList)-1]
+    }
+}
+
+
+func isPalindrome(s string, left, right int) bool {
+    for left <= right {
+        if s[left] != s[right] {
+            return false
+        }
+        left = left + 1
+        right = right -1
+    }
+    return true
+}
+```
+{{< /expand>}}
