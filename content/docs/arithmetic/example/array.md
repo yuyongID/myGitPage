@@ -347,4 +347,21 @@ func min(i, j int) int {
 }
 ```
 {{< /expand>}}
+{{< expand "最大子序和" "...">}}
+```go
+// 动态规划
+func maxSubArray(nums []int) int {
+    max := nums[0]
+    for i:=1; i<len(nums); i++ {
+        if nums[i-1] + nums[i] > nums[i] {
+            nums[i] = nums[i-1] + nums[i]  // 通过对比，将当前 index 的最优解放到数组里，以方便下个迭代 index 对比调用。
+        }
+        if nums[i] > max {
+            max = nums[i]
+        }
+    }
+    return max
+}
+```
+{{< /expand>}}
 
