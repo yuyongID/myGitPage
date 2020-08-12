@@ -348,6 +348,7 @@ func min(i, j int) int {
 ```
 {{< /expand>}}
 {{< expand "最大子序和" "...">}}
+
 ```go
 // 动态规划
 func maxSubArray(nums []int) int {
@@ -365,3 +366,67 @@ func maxSubArray(nums []int) int {
 ```
 {{< /expand>}}
 
+{{< expand "乘积最大子数组" "...">}}
+
+```go
+// 未考虑空间复杂度的动态规划
+func maxProduct(nums []int) int {
+    length := len(nums)
+    if length == 0 {
+        return 0
+    }
+    iMax, iMin := make([]int, length), make([]int, length)
+    iMax[0], iMin[0] = nums[0], nums[0]
+    for i:=1; i<length; i++ {
+        if nums[i] >= 0 {
+            iMin[i] = min(nums[i], nums[i]*iMin[i-1])
+            iMax[i] = max(nums[i], nums[i]*iMax[i-1])
+        } else {
+            iMin[i] = min(nums[i], nums[i]*iMax[i-1])
+            iMax[i] = max(nums[i], nums[i]*iMin[i-1])
+        }
+    }
+    result := iMax[0]
+    for i:=1; i<length; i++ {
+        result = max(result, iMax[i])
+    }
+    return result
+}
+// 表格复用的动态规划
+func maxProduct(nums []int) int {
+    length := len(nums)
+    if length == 0 {
+        return 0
+    }
+    preMax, preMin, result := nums[0], nums[0], nums[0]
+    var curMax, curMin int
+    for i:=1; i<length; i++ {
+        if nums[i] >= 0 {
+            curMin = min(nums[i], nums[i]*preMin)
+            curMax = max(nums[i], nums[i]*preMax)
+        } else {
+            curMin = min(nums[i], nums[i]*preMax)
+            curMax = max(nums[i], nums[i]*preMin)
+        }
+        result = max(result, curMax)
+        preMin, preMax = curMin, curMax
+    }
+    return result
+}
+
+func max(x, y int) int {
+    if x >= y {
+        return x
+    }
+    return y
+}
+
+func min(x,y int) int {
+    if x <= y {
+        return x
+    }
+    return y
+}
+```
+
+{{< /expand>}}
