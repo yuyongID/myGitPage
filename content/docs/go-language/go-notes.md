@@ -30,3 +30,10 @@ fmt.Println(c[0])  // "" 空字符串
 ```go
 s := fmt.Sprintf("%b", C)
 ```
+
+### make 与 new
+
+**new**： 返回的永远是指针，指向分配类型的地址。同时把分配的内存置零；
+
+**make**：返回 chan，map，slice，本身。这三种类型是饮用类型，没有必要返回指针；make(type, len, cap)，初始化一个 type 类型的，其中前 len 个元素都赋零值，最长长度为 cap。
+

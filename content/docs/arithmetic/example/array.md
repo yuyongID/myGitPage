@@ -120,6 +120,42 @@ func findNumberIn2DArray(matrix [][]int, target int) bool {
 {{< expand "快速排序" "...">}}
 
 ```go
+// 真快速排序
+func sortArray(nums []int) []int {
+    quickSortHelper(nums, 0, len(nums)-1)
+    return nums
+}
+
+func quickSortHelper(nums []int, left, right int) {
+    if left < right {
+        pivot := partition(nums, left, right)
+        quickSortHelper(nums, left, pivot-1)
+        quickSortHelper(nums, pivot+1, right)
+    }
+}
+
+func partition(nums []int, left, right int) int {
+    pivotValue := nums[right]
+    i := left - 1
+    for j:=left; j<right; j++ {
+        if nums[j] <= pivotValue {
+            i = i + 1
+            swap(nums, i, j)
+        }
+    }
+    swap(nums, i+1, right)
+    return i+1
+}
+
+func swap(nums []int, i, j int) {
+    nums[i], nums[j] = nums[j], nums[i]
+}
+```
+
+
+
+```go
+// 伪快速排序
 func sortArray(nums []int) []int {
     if len(nums) < 2 {
         return nums
@@ -248,13 +284,14 @@ func findLengthOfLCIS(nums []int) int {
 {{< expand "数组中的第k个最大元素" "...">}}
 ```go
 // 快速选择算法
+import "math/rand"
 func findKthLargest(nums []int, k int) int {
     rand.Seed(time.Now().UnixNano())
     left, right := 0, len(nums)-1
     target := len(nums) - k
     cur := -1
     for cur != target {
-        cur = partition(left, right, nums, target)
+        cur = partition(left, right, nums)
         if cur < target {
             left = cur + 1
         } else if cur > target {
@@ -264,7 +301,7 @@ func findKthLargest(nums []int, k int) int {
     return nums[cur]
 }
 
-func partition(left, right int, nums []int, target int) int{
+func partition(left, right int, nums []int) int{
     if left == right {
         return left
     }
