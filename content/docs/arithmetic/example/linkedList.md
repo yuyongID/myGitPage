@@ -14,25 +14,23 @@ title: "链表 linked list"
  * }
  */
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
-    result := &ListNode{}
-    preHead := result
-    for (l1 != nil && l2 != nil){
-        if l1.Val < l2.Val {
-            preHead.Next = l1
-            l1 = l1.Next
+    Node := &ListNode{}
+    cur, p1, p2 := Node, l1, l2
+    for p1 != nil && p2 != nil {
+        if p1.Val < p2.Val {
+            cur.Next, p1 = p1, p1.Next
         } else {
-            preHead.Next = l2
-            l2 = l2.Next
+            cur.Next, p2 = p2, p2.Next
         }
-        preHead = preHead.Next
+        cur = cur.Next
     }
-    if l1 == nil{
-        preHead.Next = l2
+    if p1 == nil {
+        cur.Next = p2
+    } else {
+        cur.Next = p1
     }
-    if l2 == nil {
-        preHead.Next = l1
-    }
-    return result.Next
+    return Node.Next
+
 }
 ```
 {{< /expand>}}
