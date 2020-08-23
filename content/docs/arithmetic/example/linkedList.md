@@ -44,8 +44,24 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
  *     Next *ListNode
  * }
  */
+ // 容易记忆写法
 func reverseList(head *ListNode) *ListNode {
-    if nil == head {
+    if head == nil || head.Next == nil {
+        return head
+    }
+    var pre, cur, next *ListNode
+    pre, cur, next = nil, head, nil
+    for cur != nil {
+        next = cur.Next
+        cur.Next = pre
+        pre = cur
+        cur = next
+    }
+    return pre
+}
+ // 省事写法
+func reverseList(head *ListNode) *ListNode {
+    if nil == head || head.Next == nil {
         return head
     }
     cur, next := head, head.Next
