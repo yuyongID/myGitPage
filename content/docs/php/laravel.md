@@ -4,8 +4,8 @@ title: "Laravel 框架笔记"
 
 ## 创建一个 Larvel 项目
 ```shell
-composer create-porject laravel/laravel --prefer-dist ./your_porject_name
-composer create-porject laravel/laravel=5.4.* --prefer-dist ./your_porject_name
+composer create-project laravel/laravel --prefer-dist ./your_porject_name
+composer create-project laravel/laravel=5.4.* --prefer-dist ./your_porject_name
 ```
 
 ## 重要目录结构
